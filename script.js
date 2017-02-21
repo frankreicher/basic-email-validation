@@ -28,7 +28,29 @@ Email validation can get more complicated than what we're going for here, but th
 while (true) {
     var emailAddress = prompt('Please enter you\'re email address.');
     emailAddress = emailAddress.split('');
-    if (emailAddress.length > 0) {
-        break;
+
+    var hasAtMark = false;
+    var hasPeriod;
+
+    //Determine if the email address has an @ symbol
+    for (var i = 0; i < emailAddress.length; i++) {
+        if (emailAddress[i] === '@') {
+            hasAtMark = true;
+            break;
+        } else {
+            continue;
+        }
     }
+
+    //i now holds the location in the array that @ is located at
+    console.log(i);
+
+    if (hasAtMark === true) {
+        console.log('Success');
+        break;
+    } else {
+        alert('Please enter a valid email address.');
+        continue;
+    }
+
 }
