@@ -23,10 +23,8 @@ Examples
 Email validation can get more complicated than what we're going for here, but this challenge will satisfy 95% of use cases. If you're unsure of something, check out the lab tests to understand exactly what's being evaluated.
 */
 
-//Create a loop that will loop until a valid email address has been entered
-
-while (true) {
-    var emailAddress = prompt('Please enter you\'re email address.');
+//Function to return true or false of whether an email is valid
+function isEmailValid (email) {
     emailAddress = emailAddress.split('');
 
     var hasAtMark = false;
@@ -47,10 +45,13 @@ while (true) {
 
     if (hasAtMark === true) {
         console.log('Success');
-        break;
+        return true;
     } else {
-        alert('Please enter a valid email address.');
-        continue;
+        return false;
     }
-
 }
+
+var emailAddress = prompt('Please enter an email address');
+
+var emailValid = isEmailValid(emailAddress);
+console.log(emailValid);
