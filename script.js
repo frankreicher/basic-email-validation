@@ -22,3 +22,10 @@ Examples
 '' => false (an empty string)
 Email validation can get more complicated than what we're going for here, but this challenge will satisfy 95% of use cases. If you're unsure of something, check out the lab tests to understand exactly what's being evaluated.
 */
+
+//Create a loop that will loop until a valid email address has been entered
+while (true) {
+    var emailAddress = prompt('Please enter you\'re email address.');
+
+
+}
