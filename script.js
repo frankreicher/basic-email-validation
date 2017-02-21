@@ -28,7 +28,6 @@ function isEmailValid (email) {
     emailAddress = emailAddress.split('');
 
     var hasAtMark = false;
-    var hasPeriod;
 
     //Determine if the email address has an @ symbol
     for (var i = 0; i < emailAddress.length; i++) {
@@ -44,11 +43,44 @@ function isEmailValid (email) {
     console.log(i);
 
     if (hasAtMark === true) {
-        console.log('Success');
-        return true;
+        //Has @ mark
     } else {
         return false;
     }
+
+    //Determine whether the @ sign is in a valid location in the email address
+    //Does the @sign have at least one character preceeding it?
+    if (i > 0) {
+        //Has at least one number preceeding it
+    } else {
+        return false;
+    }
+
+    var hasPeriod = false;
+
+    //Determine if the email address has an @ symbol
+    for (i += 1; i < emailAddress.length; i++) {
+        if (emailAddress[i] === '.') {
+            hasPeriod = true;
+            break;
+        } else {
+            continue;
+        }
+    }
+
+    if (hasPeriod === true) {
+        //Has a valid period
+    } else {
+        return false;
+    }
+
+    if (i < emailAddress.length - 1) {
+        //Has at least one character following the period
+    } else {
+        return false;
+    }
+
+    return true;
 }
 
 var emailAddress = prompt('Please enter an email address');
