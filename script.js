@@ -24,8 +24,11 @@ Email validation can get more complicated than what we're going for here, but th
 */
 
 //Create a loop that will loop until a valid email address has been entered
+
 while (true) {
     var emailAddress = prompt('Please enter you\'re email address.');
-
-
+    emailAddress = emailAddress.split('');
+    if (emailAddress.length > 0) {
+        break;
+    }
 }
